@@ -1,5 +1,7 @@
 # Imports
 from datetime import datetime
+import pandas as pd
+import matplotlib.pyplot as plt
 
 # Impute missing values
 from sklearn.impute import SimpleImputer
@@ -316,7 +318,7 @@ class LabelsPrediction:
         """Plot the performance metrics of Train and Test datasets across all optimized models
         """
         i=0
-        fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(14,5))
+        fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(14,7))
         for dataset in [[X_train, y_train], [X_test, y_test]]:
             model_metrics = {}
             auc_all, precision_all, recall_all, f1_all, model_names = [], [], [], [], []
